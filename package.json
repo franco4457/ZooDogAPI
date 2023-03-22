@@ -5,7 +5,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon -L",
+    "start": "node ./index.js",
+    "dev": "nodemon ./index.js",
     "test": "jest --verbose --detectOpenHandles",
     "test:m":"jest tests/models/dog.test.js",
     "test:r":"jest tests/routes/dog.test.js",
