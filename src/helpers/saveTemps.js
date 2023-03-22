@@ -14,4 +14,5 @@ const saveTemps=async()=>{
     temps=temps.map(t=>{return {name:t}})
     await Temperament.bulkCreate(temps).then(()=>console.log('Temperament Saved'))
 }
-saveTemps()
+// saveTemps()
+module.exports = saveTemps
