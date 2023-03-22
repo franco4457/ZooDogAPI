@@ -20,14 +20,12 @@
 require("dotenv").config();
 const server = require('./src/app.js');
 const { conn } = require('./src/db.js');
-const saveTemps = require('./src/helpers/saveTemps')
 
 const PORT=process.env.PORT ||3001
 
 // Syncing all the models at once.
 conn.sync({ alter: true }).then(() => {
   server.listen(PORT, async() => {
-    await saveTemps()
     console.log(`Server raised on port ${PORT}`); // eslint-disable-line no-console
   });
 });
