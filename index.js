@@ -26,6 +26,6 @@ const PORT=process.env.PORT ||3001
 // Syncing all the models at once.
 conn.sync({ alter: true }).then(() => {
   server.listen(PORT, () => {
-    console.log(`Server raise in port ${PORT}`); // eslint-disable-line no-console
+    console.log(`Server raised on port ${PORT}`); // eslint-disable-line no-console
   });
 });
