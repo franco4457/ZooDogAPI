@@ -27,7 +27,7 @@ const multerImages=multer({
 
 
 imgroute.post('/', multerImages.single("image") ,(req,res)=>{
-    res.status(200).json({msg:"imagen cambiada con exito", url:`http://localhost:3001/images/${req.file.filename}`})
+    res.status(200).json({msg:"image successfully changed", url:`https://api-zoo-dog.onrender.com/images/${req.file.filename}`})
 })
 imgroute.use("/",express.static(`${__dirname}/../images`))
 
