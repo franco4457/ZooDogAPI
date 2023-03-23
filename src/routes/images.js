@@ -1,7 +1,10 @@
+require("dotenv").config()
 const {Router} = require('express');
 const express = require('express');
 const multer = require('multer');
 const {extname} = require('path');
+
+const {SV_HOST}=process.env
 
 const imgroute=Router()
 
@@ -27,7 +30,7 @@ const multerImages=multer({
 
 
 imgroute.post('/', multerImages.single("image") ,(req,res)=>{
-    res.status(200).json({msg:"image successfully changed", url:`https://api-zoo-dog.onrender.com/images/${req.file.filename}`})
+    res.status(200).json({msg:"image successfully changed", url:`${SV_HOST}/images/${req.file.filename}`})
 })
 imgroute.use("/",express.static(`${__dirname}/../images`))
 
