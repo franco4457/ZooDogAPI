@@ -12,8 +12,4 @@ const router = Router();
 router.use('/dogs', dogs);
 router.use("/images", imgsroute);
 
-router.use("/", (req, res) => {
-    res.status(200).send("Hola mundo");
-})
-
 module.exports = router;
