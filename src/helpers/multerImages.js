@@ -2,8 +2,6 @@ const multer = require("multer");
 const { extname } = require("path");
 
 
-
-
 const MIMETYPES = ["image/jpg", "image/jpeg", "image/png"];
 
 const multerImages = multer({

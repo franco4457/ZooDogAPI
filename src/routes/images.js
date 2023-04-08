@@ -20,20 +20,20 @@ cloudinary.config({
 
 const imgroute = Router();
 
-imgroute.post("/", multerImages.single("image"), async (req, res) => {
-  // const pathImage= `${SV_HOST}/images/${req.file.filename}`
+// imgroute.post("/", multerImages.single("image"), async (req, res) => {
+imgroute.post("/",  async (req, res) => {
   try {
-    const { url } = await cloudinary.uploader.upload(req.file.path, {
+    // const imagen = await cloudinary.uploader.upload(req.file.path, {
+    const imagen = await cloudinary.uploader.upload(req.body.image, {
       folder: "Pi-Dogs",
     });
     res.status(200).json({
       msg: "image successfully changed",
-      url,
+      url:imagen.secure_url,
     });
   } catch (error) {
     res.status(400).json({ msg: error.message });
   }
 });
-// imgroute.use("/", express.static(`${__dirname}/../images`));
 
 module.exports = imgroute;
